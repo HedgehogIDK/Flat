@@ -21,46 +21,35 @@ Flat::Flat(int number_p, int floor_p) {
 		number = number_p;
 	}
 	else {
-		exit(368); // Îøèáêà: íåâåðíûå äàííûå
+		exit(368); // Ошибка: данные не соответствуют 
 	}
 
 	if (floor_p > -1) {
 		floor = floor_p;
 	}
 	else {
-		exit(368); // Îøèáêà: íåâåðíûå äàííûå
+		exit(368);  // Ошибка: данные не соответствуют 
 	}
 }
 
 Flat::Flat(const Flat& Apart) {
-	if (this != &Apart) {
-		number = Apart.number;
-		floor = Apart.floor;
-	}
+	number = Apart.number;
+	floor = Apart.floor;
 }
 
-bool Flat::operator==(Flat& obj) {
-	if (floor == obj.floor && number == obj.number)
-		return true;
-	else
-		return false;
+bool Flat::operator==(const Flat& obj) {
+	return floor == obj.floor && number == obj.number;
 }
 
-bool Flat::operator<(Flat& obj) {
-	if (floor < obj.floor && number < obj.number)
-		return true;
-	else
-		return false;
+bool Flat::operator<(const Flat& obj) {
+	return floor < obj.floor && number < obj.number;
 }
 
-bool Flat::operator>(Flat& obj) {
-	if (floor > obj.floor && number > obj.number)
-		return true;
-	else
-		return false;
+bool Flat::operator>(const Flat& obj) {
+	return floor > obj.floor && number > obj.number;
 }
 
-Flat Flat::operator=(Flat& obj) {
+Flat& Flat::operator=(const Flat& obj) {
 	if (!(this == &obj)) {
 		floor = obj.floor;
 		number = obj.number;

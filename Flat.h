@@ -8,23 +8,24 @@ class Flat {
     int floor;
 
 public:
-    //Êîíñòðóêòîðû 
+    //Конструкторы 
     Flat() :Flat(0, 0) {}
     explicit Flat(int number_p) :Flat(number_p, 0) {}
     Flat(int number_p, int floor_p);
 
-    //Êîíñòðóêòîð êîïèðîâàíèÿ
+    //Конструктор копирования 
     Flat(const Flat& Apart);
 
-    //Ìåòîäû è àêññåñîðû
+    //Аксессоры
     void setNumber(int number_p);
     void setFloor(int floor_p);
     int getFloor() const;
     int getNumber() const;
 
-    bool operator==(Flat& obj);
-    bool operator<(Flat& obj);
-    bool operator>(Flat& obj);
-    Flat operator=(Flat& obj);
+    //Перегрузка
+    bool operator==(const Flat& obj);
+    bool operator<(const Flat& obj);
+    bool operator>(const Flat& obj);
+    Flat& operator=(const Flat& obj);
 };
 

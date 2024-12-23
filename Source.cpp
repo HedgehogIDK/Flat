@@ -10,7 +10,9 @@ int main() {
 
 	flat1 = flat2;
 
-	flat1 == flat2 ? cout << "Они равны" : cout << "Они не равны";
+	flat1 == flat2 ? cout << "Они равны\n" : cout << "Они не равны\n";
+
+	flat1 < flat2 ? cout << "Первый меньше второго" : cout << "Второй меньше первого";
 
 	return 0;
 }
